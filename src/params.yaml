@@ -1,0 +1,8 @@
+
+data:
+  csv_file_path: ../data/external/train.csv
+  test_set_ratio: 0.2
+  train_csv_save_path: ../data/processed/training.csv
+  test_csv_save_path: ../data/processed/test.csv
+
+

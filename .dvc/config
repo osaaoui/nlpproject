@@ -1,0 +1,16 @@
+[core]
+    remote = mydrive
+['remote "gdrive"']
+    url = gdrive://1DSuLfkbPWJYy5ShNwG-09mPvNOJYc452
+['remote "mondataremote"']
+    url = gdrive://1DSuLfkbPWJYy5ShNwG-09mPvNOJYc452
+['remote "mydata"']
+    url = gdrive://10UziNWUJrB0tM4I1BLXHgcWRkNENQZDN
+['remote "mondata"']
+    url = gdrive://1mLlsDi9Ibj5XoZTUxem8IQ_YRbfBuezE
+['remote "mondatabis"']
+    url = gdrive://10UziNWUJrB0tM4I1BLXHgcWRkNENQZDN
+['remote "local"']
+    url = ../../../datasets/dvc_storage
+['remote "mydrive"']
+    url = gdrive://1DSuLfkbPWJYy5ShNwG-09mPvNOJYc452
