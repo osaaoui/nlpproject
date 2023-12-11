@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/omarsaaoui/Documents/bdeb/2023/session_automne2023/cours_projet_synthese/projet/nlpproject/mlruns/950419360890515842/e009aefdae8942138ec8d328b89fcc46/artifacts
+end_time: 1702186674623
+entry_point_name: ''
+experiment_id: '950419360890515842'
+lifecycle_stage: active
+run_id: e009aefdae8942138ec8d328b89fcc46
+run_name: omniscient-frog-905
+run_uuid: e009aefdae8942138ec8d328b89fcc46
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1702186674578
+status: 3
+tags: []
+user_id: omarsaaoui

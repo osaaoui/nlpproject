@@ -7,4 +7,13 @@ Sphinx
 coverage
 awscli
 flake8
+flask
+requests
+pandas
+scikit-learn
+matplotlib
+seaborn
+numpy
+joblib
+yaml
 python-dotenv>=0.5.1
