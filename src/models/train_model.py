@@ -117,6 +117,7 @@ def train_and_evaluate(config_path):
         y_pred = model.predict(xtest_cv)
         mean_squared_error, r2_score, accuracy = accuracymeasures(test_y,y_pred,'weighted')
         joblib.dump(model, model_dir)
+        #joblib.dump(count_vec, model_dir)
 
         mlflow.log_param("test_size", test_size)
         mlflow.log_metric("mean_squared_error", mean_squared_error)

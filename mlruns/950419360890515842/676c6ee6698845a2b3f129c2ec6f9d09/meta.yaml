@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/omarsaaoui/Documents/bdeb/2023/session_automne2023/cours_projet_synthese/projet/nlpproject/mlruns/950419360890515842/676c6ee6698845a2b3f129c2ec6f9d09/artifacts
+end_time: 1702268720168
+entry_point_name: ''
+experiment_id: '950419360890515842'
+lifecycle_stage: active
+run_id: 676c6ee6698845a2b3f129c2ec6f9d09
+run_name: debonair-goose-97
+run_uuid: 676c6ee6698845a2b3f129c2ec6f9d09
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1702268720117
+status: 3
+tags: []
+user_id: omarsaaoui

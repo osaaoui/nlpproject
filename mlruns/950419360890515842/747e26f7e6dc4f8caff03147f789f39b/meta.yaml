@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/omarsaaoui/Documents/bdeb/2023/session_automne2023/cours_projet_synthese/projet/nlpproject/mlruns/950419360890515842/747e26f7e6dc4f8caff03147f789f39b/artifacts
+end_time: 1702267384321
+entry_point_name: ''
+experiment_id: '950419360890515842'
+lifecycle_stage: active
+run_id: 747e26f7e6dc4f8caff03147f789f39b
+run_name: casual-tern-548
+run_uuid: 747e26f7e6dc4f8caff03147f789f39b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1702267384188
+status: 3
+tags: []
+user_id: omarsaaoui
