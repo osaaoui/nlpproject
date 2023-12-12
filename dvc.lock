@@ -49,8 +49,8 @@ stages:
       size: 1204714309
     - path: src/models/train_model.py
       hash: md5
-      md5: 2237de2ac44cad5413bdc09afbf9333d
-      size: 5936
+      md5: 69bb78caec6ac4ca586fb89cceb2088a
+      size: 6324
     params:
       params.yaml:
         multiNB.alpha: 1.0

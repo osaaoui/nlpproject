@@ -1,83 +1,62 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
 
-{% block title %}
-ChurnPrediction
-{% endblock title %}
+<head>
+    <title>
+        Email Spam Classifier
+    </title>
+    <style>
+        body {
+            text-align: center;
+        }
 
+        button {
+            color: aliceblue;
+            background-color: blue;
+        }
+    </style>
+</head>
 
-{% block custom_css %}
-<!-- Custom CSS -->
-<link rel="stylesheet" href="{{url_for('static', filename='css/main.css') }}">
-{% endblock custom_css %}
-
-
-{% block body %}
-<!-- nav bar -->
-
-<nav class="navbar navbar-expand-lg navbar-light shadow fixed-top" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="/">Boston Housing Price Prediction</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com/osaaoui/tp_mlpipeline">source code</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div>
-    <!-- nav bar ends -->
-
-    <div class="container-fluid masthead">
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <form method="POST">
-                        <!-- Input block-->
-                        <div class="form-group">
-                            <label for="translation">
-                                <blockquote class="blockquote">
-                                    <p class="mb-2">Enter your complaint:</p>
-                                </blockquote>
-                            </label>
-                            <textarea class="form-control" name="complaint" rows="1" 
-                                placeholder="Complaint"></textarea>
-                            
-                        </div>
-
-                        <!-- Select output language here. -->
-                        <div class="form-group">
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-2">Predict</button></br>
-                        </br>
-                    </form>
-                    <!-- Translated text returned by the Translate API is rendered here. -->
-                </div>
-                <div class="col">
-                    <form>
-                        <div class="form-group">
-                            <label for="translation-result">
-
-                                <blockquote class="blockquote">
-                                    <p class="mb-2">Prediction:</p>
-                                </blockquote>
-
-                            </label>
-                            <textarea readonly class="form-control" id="exTextarea" rows="5">{{ response }}</textarea>
-                        </div>
-                    </form>
-                </div>
+<body>
+    <h1>Ticket Classifier</h1>
+    <div>
+        <form method="post" action="/predict">
+            <textarea rows="12" cols="60" name="content" placeholder="Enter your email here"
+                autocomplete="off">{{ email }}</textarea>
+            <div>
+                <button type="submit">
+                    Button
+                </button>
+                <a href="/">Reset</a>
             </div>
-        </div>
+        </form>
 
-        {% endblock body %}
+    </div>
+    <div>
+        
+        {% if prediction ==0 %}
+        <h2 style="color: red">Checking or savings account</h2>
+        {% elif prediction ==1 %}
+        <h2 style="color: red">Credit card or prepaid card</h2>
+        {% elif prediction ==2 %}
+        <h2 style="color: red">Credit reporting, credit repair services, or other personal consumer reports</h2>
+        {% elif prediction ==3 %}
+        <h2 style="color: red">Debt collection</h2>
+        {% elif prediction ==4 %}
+        <h2 style="color: red">Money transfer, virtual currency, or money service</h2>
+        {% elif prediction ==5 %}
+        <h2 style="color: red">Mortgage</h2>
+        {% elif prediction ==6 %}
+        <h2 style="color: red">Payday loan, title loan, or personal loan</h2>
+        {% elif prediction ==7 %}
+        <h2 style="color: red">Student loan</h2>
+        {% elif prediction==8 %}
+        <h2 style="color: red">Vehicle loan or lease</h2>
+        {% else %}
+        <h2 style="color: green">Please enter another complaint!</h2>
+        {% endif %}
+        <!-- <p id="display"></p> -->
+    </div>
+</body>
+
+</html>

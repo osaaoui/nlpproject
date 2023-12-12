@@ -74,7 +74,10 @@ def get_feat_and_target(df,target):
     df_balanced['clean_text'] = df_balanced["Consumer complaint narrative"].apply(clean_text)
     # Encoder la variable cible
     df_balanced["category_id"]= df_balanced["Product"].factorize()[0]
-
+    #category_id_df = df_balanced[['Product', 'category_id']].drop_duplicates()
+    #category_to_id = dict(category_id_df.values)
+    #id_to_category = dict(category_id_df[['category_id', 'Product']].values)
+    #print("Categories mapping: ", id_to_category.items())
     #x=df.loc[:, 0:7]
     #y=df.iloc[:, 7].values.reshape(-1,1)
     
@@ -105,19 +108,22 @@ def train_and_evaluate(config_path):
     count_vec = CountVectorizer(max_df=0.90,min_df=2,
                            max_features=1000,stop_words='english')
 
-    xtrain_cv = count_vec.fit_transform(train_x)
+    cv= count_vec.fit(train_x)
+    #xtrain_cv = count_vec.fit_transform(train_x)
+    xtrain_cv = cv.transform(train_x)
     xtest_cv = count_vec.transform(test_x)
     test_size= 0.3
     mlflow.set_experiment("tracking_demo")
     with mlflow.start_run():
 
         model_dir = config["model_dir"]
+        model_webapp_dir= config["model_webapp_dir"]
         model = MultinomialNB(alpha=alpha,fit_prior=fit_prior)
         model.fit(xtrain_cv, train_y.ravel())
         y_pred = model.predict(xtest_cv)
         mean_squared_error, r2_score, accuracy = accuracymeasures(test_y,y_pred,'weighted')
         joblib.dump(model, model_dir)
-        #joblib.dump(count_vec, model_dir)
+        joblib.dump(cv, "vectorizer.pkl")
 
         mlflow.log_param("test_size", test_size)
         mlflow.log_metric("mean_squared_error", mean_squared_error)
