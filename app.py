@@ -3,7 +3,6 @@ from utils import model_predict
 #app = Flask(__name__)
 import os
 import numpy as np
-import yaml
 
 webapp_root = "webapp"
 params_path = "params.yaml"
