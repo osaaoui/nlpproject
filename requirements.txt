@@ -17,3 +17,7 @@ numpy
 joblib
 yaml
 python-dotenv>=0.5.1
+gunicorn
+Jinja2
+pickle
+Werkzeug
